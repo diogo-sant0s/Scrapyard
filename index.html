@@ -1,0 +1,62 @@
+<!-- Copyright 2023 The MediaPipe Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
+    <script type="module" src="../static/style.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 style="font-family: lexend deca">Body Finder</h1>
+
+        <h2 style="font-family: lexend deca"> Webcam que registra os teus movimentos e recebes uma pontuação caso
+            acertes ou
+            erres.</h2>
+    </header>
+    <main>
+        <aside>
+            <p style="font-family: lexend deca">O site ira te pedir para fazeres um gesto, caso acertes, recebes +1
+                ponto,
+                caso erres,
+                -1 ponto.
+            <p>O objetivo é
+                fazeres <strong>o maximo de pontos possiveis</strong> caso o tempo acabe, o jogo acaba.</p>
+                <div id="challenge" class="challenge"></div>
+            <h3 style="font-family: lexend deca">Pontos: <span id="score">0</span></h3>
+            <time id="date"></time>
+        </aside>
+        <div class="camera">
+            <div id="liveView" class="videoView">
+                <video id="webcam" autoplay playsinline></video>
+                <canvas class="output_canvas" id="output_canvas" width="1280" height="720"
+                    style="position: absolute; left: 0px; top: 0px;"></canvas>
+                <p id="gesture_output" class="output"></p>
+            </div>
+        </div>
+    </main>
+    <div id="overlay" class="overlay error">
+        <p style="font-family: lexend deca" class="error">Tenta novamente, A tua pontuação foi: 0 <span id="score"></span></p>
+        <p style="font-family: lexend deca" class="success">Obrigado por teres jogado e perdido o teu tempo! :)</p>
+        <button class="tentarnovamente error" onClick="window.location.reload();">Tenta Novamente <b>CRAZY GUY</b>!</button>
+    </div>
+
+
+</body>
+
+</html>
